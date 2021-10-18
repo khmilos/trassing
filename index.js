@@ -990,6 +990,8 @@
         current = next;
       }
 
+      console.log(`Длина пути: ${weights[sink]}`);
+
       return this.decodePath(path, source, sink);
     }
 
