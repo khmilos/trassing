@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main class="main mt-30 d-flex column child-vertical-spacing-30">
+      <div class="container main__canvas">
+        <div class="card">
+          <canvas class="canvas"></canvas>
+        </div>
+      </div>
+
+      <form class="container row wrap row-spacing-30 js-figure-container js-form">
+        <div>
+          <div class="card">
+            <div class="card__group">
+              <h2 class="card__title">Положение точек:</h2>
+            </div>
+            <div class="card__group row">
+              <div
+                class="card__group d-flex align-items-center child-spacing-15"
+              >
+                <label class="label" for="point-a">Точка A:</label>
+                <fieldset
+                  class="d-flex align-items-center child-spacing-15"
+                  id="point-a"
+                  name="point-a"
+                >
+                  <input
+                    id="point-a-x"
+                    class="input"
+                    name="point-a-x"
+                    type="number"
+                    value="30"
+                    min="0"
+                    max="100"
+                  />
+                  <input
+                    id="point-a-y"
+                    name="point-a-y"
+                    class="input"
+                    type="number"
+                    value="0"
+                    min="0"
+                    max="100"
+                  />
+                </fieldset>
+              </div>
+              <div
+                class="card__group d-flex align-items-center child-spacing-15"
+              >
+                <label class="label" for="point-b">Точка B:</label>
+                <fieldset
+                  class="d-flex align-items-center child-spacing-15"
+                  id="point-b"
+                  name="point-b"
+                >
+                  <input
+                    id="point-b-x"
+                    class="input"
+                    name="point-b-x"
+                    type="number"
+                    value="60"
+                    min="0"
+                    max="100"
+                  />
+                  <input
+                    id="point-b-y"
+                    class="input"
+                    name="point-b-y"
+                    type="number"
+                    value="40"
+                    min="0"
+                    max="100"
+                  />
+                </fieldset>
+              </div>
+            </div>
+            <div class="card__group">
+              <div class="card__group">
+                <h3 class="card__title">Количество фигур:</h2>
+              </div>
+              <div class="card__group d-flex child-spacing-15">
+                <button class="button js-figure-create" type="button">Добавить</button>
+                <button class="button js-figure-delete" type="button">Удалить</button>
+              </div>
+            </div>
+            <div class="card__group">
+              <button class="button" type="submit">Принять</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="js-figure">
+          <div class="card">
+            <div class="card__group">
+              <h2 class="card__title">Фигура №1</h2>
+            </div>
+            <div class="card__group js-vertices">
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="22"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="31"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="35"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="27"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="6"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="8"
+                  min="0"
+                  max="100"
+                />
+              </div>
+            </div>
+            <div class="card__group d-flex child-spacing-15">
+              <button class="button" type="button">+</button>
+              <button class="button" type="button">-</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="js-figure">
+          <div class="card">
+            <div class="card__group">
+              <h2 class="card__title">Фигура №2</h2>
+            </div>
+            <div class="card__group js-vertices">
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="40"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="25"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="54"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="9"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="12"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="7"
+                  min="0"
+                  max="100"
+                />
+              </div>
+            </div>
+            <div class="card__group d-flex child-spacing-15">
+              <button class="button" type="button">+</button>
+              <button class="button" type="button">-</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="js-figure">
+          <div class="card">
+            <div class="card__group">
+              <h2 class="card__title">Фигура №3</h2>
+            </div>
+            <div class="card__group js-vertices">
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="44"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="30"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="68"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="12"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="59"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="8"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="42"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="28"
+                  min="0"
+                  max="100"
+                />
+              </div>
+            </div>
+            <div class="card__group d-flex child-spacing-15">
+              <button class="button" type="button">+</button>
+              <button class="button" type="button">-</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="js-figure">
+          <div class="card">
+            <div class="card__group">
+              <h2 class="card__title">Фигура №4</h2>
+            </div>
+            <div class="card__group js-vertices">
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="42"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="36"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="63"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="36"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="89"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="30"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="73"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="13"
+                  min="0"
+                  max="100"
+                />
+              </div>
+            </div>
+            <div class="card__group d-flex child-spacing-15">
+              <button class="button" type="button">+</button>
+              <button class="button" type="button">-</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="js-figure">
+          <div class="card">
+            <div class="card__group">
+              <h2 class="card__title">Фигура №5</h2>
+            </div>
+            <div class="card__group js-vertices">
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="74"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="37"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="95"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="37"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="91"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="31"
+                  min="0"
+                  max="100"
+                />
+              </div>
+              <div class="card__group d-flex child-spacing-15 js-vertex">
+                <input
+                  class="input"
+                  type="number"
+                  value="74"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  value="35"
+                  min="0"
+                  max="100"
+                />
+              </div>
+            </div>
+            <div class="card__group d-flex child-spacing-15">
+              <button class="button" type="button">+</button>
+              <button class="button" type="button">-</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
